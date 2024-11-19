@@ -2,7 +2,8 @@ package calculator.enums;
 
 public enum ErrorMessage {
     INVALID_INPUT_NONE("[ERROR] 입력 없음 에러"),
-    INVALID_SEPARATOR("[ERROR] 구분자 에러");
+    INVALID_SEPARATOR("[ERROR] 구분자 에러"),
+    INVALID_NEGATIVE("[ERROR] 음수 입력 에러");
 
     private final String errorMessage;
 

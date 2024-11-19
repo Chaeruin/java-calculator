@@ -6,15 +6,24 @@ import java.util.Arrays;
 public class InputValidator {
     public static boolean isNone(String input) {
         if (input.equals("")) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT_NONE.getErrorMessage());
+            return true;
         }
-        return true;
+        return false;
     }
 
     public static boolean isNoneInput(String[] input) {
         for (String i : input) {
             if (i.equals("") || i.equals(" ")) {
-                throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT_NONE.getErrorMessage());
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isPositive(String[] input) {
+        for (String i: input) {
+            if (Integer.parseInt(i) <= 0) {
+                throw new IllegalArgumentException(ErrorMessage.INVALID_NEGATIVE.getErrorMessage());
             }
         }
         return true;
